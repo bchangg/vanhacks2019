@@ -1,5 +1,7 @@
 import React from "react";
 
-export default ListingPage(pros => {
-  return <></>;
-});
+export default function ListingPage(props) {
+  return (
+    <p>LISTING</p>
+  )
+}

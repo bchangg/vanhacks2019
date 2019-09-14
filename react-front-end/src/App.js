@@ -16,6 +16,7 @@ class App extends Component {
   render() {
     return (
       <>
+        <p>LANDING PAGE</p>
         <LoadingPage></LoadingPage>
         <br />
         <CategoryPage></CategoryPage>

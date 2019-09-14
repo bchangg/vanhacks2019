@@ -1,8 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { useRoutes } from 'hookrouter';
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
+import routes from './router'
+
+function App() {
+  return useRoutes(routes);
+}
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
