@@ -1,16 +1,19 @@
 import React from "react";
 //import { navigate } from "hookrouter";
 import { Button } from "antd";
+import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
+import { OmitProps } from "antd/lib/transfer/renderListBody";
 
-const LoadingPage = pros => {
+const LandingPage = props => {
   const handleClick = () => {
-    console.log("navigate");
+    props.getNewAccordion("");
   };
+
   return (
     <>
       <h1>Post a donation today</h1>
       <p>
-        Do you have any unwanted food, clothung or other things that you want to
+        Do you have any unwanted food, clothing or other things that you want to
         give away?
       </p>
       <Button onClick={handleClick()} type="primary">
@@ -20,4 +23,4 @@ const LoadingPage = pros => {
   );
 };
 
-export { LoadingPage };
+export { LandingPage };
