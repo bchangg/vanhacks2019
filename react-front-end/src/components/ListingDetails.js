@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
-export default function ListingDetails(props){
+export default function ListingDetails(props) {
   return (
-    <p>LISTING DETAILS</p>
+    <Fragment>
+      <p>LISTING DETAILS {props.id}</p>
+    </Fragment>
   )
 }

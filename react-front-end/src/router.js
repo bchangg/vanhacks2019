@@ -8,7 +8,7 @@ import App from './App';
 const routes = {
   "/login": () => < NgoSignIn / > ,
   "/items": () => < ListingPage / > ,
-  "/items/:id": ({id}) => <ListingDetails id={id}/>,
+  "/items/:id": ({ id }) => <ListingDetails id={id}/>,
   "/": () => < App / > ,
   "/newItem": () => < NewListing / >
 };
