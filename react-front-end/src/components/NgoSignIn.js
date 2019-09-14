@@ -1,5 +1,7 @@
-import React from "react";
+import React from 'react';
 
-export default NgoSignIn(pros => {
-  return <></>;
-});
+export default function NgoSignIn(props) {
+  return (
+    <p>NGO SIGN IN</p>
+  )
+}
