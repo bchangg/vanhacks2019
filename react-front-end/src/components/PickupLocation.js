@@ -13,7 +13,6 @@ const PickupLocation = props => {
   const [textArea, setTextArea] = useState("");
 
   function checkAll() {
-    return true;
     if (addressOne && city && province && textArea) {
       return true;
     } else {

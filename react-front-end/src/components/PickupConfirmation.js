@@ -14,7 +14,6 @@ const PickupConfirmation = props => {
   }
 
   function checkAll() {
-    return true;
     if (date && phone) {
       return true;
     } else {
