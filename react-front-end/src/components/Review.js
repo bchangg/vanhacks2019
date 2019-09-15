@@ -64,13 +64,16 @@ const Review = props => {
         <p><span className="sg-review-label">Pickup Type</span>Leave for pickup</p>
       </div>
 
-      <h4>Pickup Address</h4>
-      <p>
-      {props.itemForReview.address} {props.itemForReview.address2}<br />
-      {props.itemForReview.city}, {props.itemForReview.province}, {props.itemForReview.country}<br />
-      {props.itemForReview.zipcode}
-
-      </p>
+      <div className="sg-review-address">
+        <h4>Pickup Address</h4>
+        <p>
+        {props.itemForReview.address} {props.itemForReview.address2}<br />
+        {props.itemForReview.city}, {props.itemForReview.province}, {props.itemForReview.country}<br />
+        {props.itemForReview.zipcode}
+        </p>
+      </div>
+      <iframe width="100%" height="200" frameborder="0" style={{border: 0}}
+        src={`https://www.google.com/maps/embed/v1/search?key=AIzaSyClTeAI8t2CGdio91gXQkyf62oPsgPO0TU&q=${props.itemForReview.address},${props.itemForReview.city}+${props.itemForReview.province}`} allowfullscreen="allow" />
       {!props.showDatePicker ? (
         <Button
           onClick={() => {
