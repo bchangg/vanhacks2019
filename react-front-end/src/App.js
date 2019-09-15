@@ -5,7 +5,7 @@ import TopBar from "./components/TopBar";
 const App = () => {
   return (
     <div className="sg-full-width">
-      <TopBar signIn />
+      <TopBar login />
       <LandingPage></LandingPage>
     </div >
   );

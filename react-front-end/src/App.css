@@ -120,7 +120,7 @@ button.ant-btn-primary:focus {
   margin-bottom: 0.5rem;
 }
 
-.sg-new-listing .sg-description-page label {
+.sg-new-listing label {
   display: block;
   margin:1.5rem 0.5rem 0;
   font-size:1.2rem;
@@ -136,6 +136,14 @@ button.ant-btn-primary:focus {
   width: 15rem;
 }
 
-.sg-new-listing .sg-description-page button {
+.sg-new-listing .sg-description-page button,
+.sg-new-listing .sg-pickup-location button {
   margin-top: 1rem;
+}
+
+.sg-new-listing .sg-pickup-confirmation p {
+  margin: 2rem -1.6rem;
+  background: #F8F2DC;
+  color: var(--primary-color);
+  padding: 1rem 1.6rem;
 }
