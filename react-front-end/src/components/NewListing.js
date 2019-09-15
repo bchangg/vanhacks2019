@@ -35,7 +35,8 @@ const NewListing = pros => {
     city: "",
     province: "",
     zipcode: "",
-    country: ""
+    country: "",
+    url: "https://www.incimages.com/uploaded_files/image/970x450/getty_855098134_353411.jpg"
   });
 
   const callBack = key => {

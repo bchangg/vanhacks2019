@@ -3,15 +3,15 @@
 * { 
   margin: 0;
   padding: 0;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Nunito', sans-serif !important;
 }
 html {
-  font-size: 62.5%; /* Now 10px = 1rem! */
+  font-size: 62.5%  !important; /* Now 10px = 1rem! */
   --primary-color: #E8BC06;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
+  font-weight: 700 !important;
 }
 
 body {
@@ -141,9 +141,70 @@ button.ant-btn-primary:focus {
   margin-top: 1rem;
 }
 
+.sg-new-listing .ant-collapse {
+  margin-left: -2.5rem;
+  margin-right: -2.5rem;
+}
+
 .sg-new-listing .sg-pickup-confirmation p {
   margin: 2rem -1.6rem;
   background: #F8F2DC;
   color: var(--primary-color);
   padding: 1rem 1.6rem;
+}
+
+.sg-review {
+
+}
+
+.sg-review .sg-review-image {
+  display: block;
+  height: 15rem;
+}
+
+.sg-review .sg-review-title-box {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 3rem 2.5rem;
+  font-size: 14px;
+}
+
+.sg-review .sg-review-title-box h3 {
+  color: white;
+  font-size: 1.6rem;
+}
+.sg-review {
+
+}
+
+.sg-review .sg-review-cool-box {
+  font-weight: 700;
+  text-transform: capitalize;
+  display: flex;
+  border-radius: 5px;
+  background-color: white;
+  align-items: center;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+  margin: -3rem 1.5rem 2rem;
+}
+
+.sg-pickup-review .ant-collapse-content-box {}
+
+.sg-review .sg-review-cool-box .ant-divider-vertical {
+  height: 3rem;
+}
+
+.sg-review .sg-review-cool-box p {
+  margin: 1.5rem;
+}
+
+.sg-review .sg-review-label {
+  display: block;
+  color: #C4C4C4;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.sg-pickup-review .ant-collapse-content-box {
+  padding: 0;
 }
