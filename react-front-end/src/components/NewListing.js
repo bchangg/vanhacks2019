@@ -24,48 +24,37 @@ const NewListing = pros => {
     item_type: ""
   });
 
-  useEffect(() => {}, [accordionKey]);
-
-  var removePadding = {
-    padding: "0"
-  };
-  const handleClick = () => {
-    console.log("navigate");
+  const callBack = key => {
+    setAccordionKey(key);
   };
   return (
     <>
-      <Collapse
-        style={removePadding}
-        accordion={true}
-        bordered={false}
-        activeKey={accordionKey}
-        accordion
-      >
-        <Panel style={removePadding} showArrow={false} key="CategoryPage">
+      <Collapse activeKey={accordionKey} onChange={callBack} accordion>
+        <Panel header="Category" key="CategoryPage">
           <CategoryPage
             setPickupDetails={setPickupDetails}
             setAccordionKey={setAccordionKey}
           ></CategoryPage>
         </Panel>
-        <Panel style={removePadding} showArrow={false} key="DescriptionPage">
+        <Panel header="Description" key="DescriptionPage">
           <DescriptionPage
             setPickupDetails={setPickupDetails}
             setAccordionKey={setAccordionKey}
           ></DescriptionPage>
         </Panel>
-        <Panel style={removePadding} showArrow={false} key="SelectPickup">
+        <Panel header="Select Pickup" key="SelectPickup">
           <SelectPickup
             setPickupDetails={setPickupDetails}
             setAccordionKey={setAccordionKey}
           ></SelectPickup>
         </Panel>
-        <Panel style={removePadding} showArrow={false} key="PickupScheduling">
+        <Panel header="Pickup Scheduling" key="PickupScheduling">
           <PickupScheduling
             setPickupDetails={setPickupDetails}
             setAccordionKey={setAccordionKey}
           ></PickupScheduling>
         </Panel>
-        <Panel style={removePadding} showArrow={false} key="Review">
+        <Panel header="Pickup Review" key="Review">
           <Review
             setPickupDetails={setPickupDetails}
             setAccordionKey={setAccordionKey}
