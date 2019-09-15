@@ -38,11 +38,7 @@ const NewListing = pros => {
           ></CategoryPage>
         </Panel>
 
-        <Panel
-          className={show ? "hide" : null}
-          header="Description"
-          key="DescriptionPage"
-        >
+        <Panel header="Description" key="DescriptionPage">
           <DescriptionPage
             setPickupDetails={setPickupDetails}
             setAccordionKey={setAccordionKey}

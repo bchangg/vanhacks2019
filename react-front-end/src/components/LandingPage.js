@@ -1,11 +1,11 @@
 import React from "react";
-//import { navigate } from "hookrouter";
+import { navigate } from "hookrouter";
 import { Button } from "antd";
 import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
 
 const LandingPage = props => {
   const handleClick = () => {
-    props.getNewAccordion("");
+    navigate("/newItem");
   };
 
   return (
@@ -16,7 +16,7 @@ const LandingPage = props => {
         Do you have any unwanted food, clothing or other things that you want to
         give away?
       </p>
-      <Button onClick={handleClick()} type="primary">
+      <Button onClick={handleClick} type="primary">
         Post a donation
       </Button>
     </>

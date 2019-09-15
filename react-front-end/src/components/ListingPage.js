@@ -2,7 +2,7 @@ import React from "react";
 import { Form, Icon, Input, Button } from "antd";
 import "antd/dist/antd.css";
 
-export default ListingPage(props => {
+const ListingPage = props => {
   return (
     <>
       <Button
@@ -15,4 +15,6 @@ export default ListingPage(props => {
       </Button>
     </>
   );
-});
+};
+
+export { ListingPage };
