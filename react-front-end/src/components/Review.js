@@ -21,11 +21,11 @@ const Review = props => {
 
       <Button
         onClick={() => {
-          console.log( props.itemForReview );
+          console.log(props.itemForReview);
           axios
             .post("/api/v1/posts", props.itemForReview)
             .then(response => {
-              console.log(response.body);
+              console.log(response.data);
             })
             .catch(error => {
               console.log(error);
