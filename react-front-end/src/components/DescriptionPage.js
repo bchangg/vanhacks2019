@@ -23,7 +23,6 @@ const DescriptionPage = props => {
   }
 
   function checkAll() {
-    return true;
     if (textArea && title && quantity) {
       return true;
     } else {

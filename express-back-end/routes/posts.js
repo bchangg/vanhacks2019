@@ -37,7 +37,7 @@ router.post('/posts', (req, res) => {
         .insert(postObj)
         .then(results => {
             if (results.rowCount && results.rowCount > 0) {
-                res.json( {
+                res.json({
                     message: "Post created with success!"
                 })
             }
@@ -48,11 +48,33 @@ router.get('/posts/:postId', (req, res) => {
     let postId = req.params.postId;
 
     knex
-        .select('*')
+        .select(['posts.*', 'post_images.url'])
         .from('posts')
-        .where({ 'id': postId })
+        .where({ 'posts.id': postId })
+        .leftJoin('post_images', 'posts.id', 'post_images.post_id')
         .then(result => {
-            res.json(result);
+
+            let obj = result.map( r => {
+                return {
+                    id: r.id,
+                    title: r.title,
+                    quantity: r.quantity,
+                    notes: r.notes,
+                    pickup_deadline: r.pickup_deadline,
+                    pickup_location: r.pickup_location,
+                    phone: r.phone,
+                    item_type: r.item_type,
+                    url: r.url,
+                    address: "509 E 28th Avenue",
+                    address2: "Basement",
+                    city: "Vancouver",
+                    province: "BC",
+                    zipcode: "V5V2N4",
+                    country: "Canada"   
+                };
+            });
+
+            res.json( obj );
         });
 });
 
