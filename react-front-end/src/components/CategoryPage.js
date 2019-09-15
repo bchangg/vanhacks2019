@@ -27,6 +27,9 @@ const CategoryPage = props => {
           props.setPickupDetails(prev => {
             return { ...prev, item_type: "clothing" };
           });
+          props.setShowStage(prev => {
+            return { ...prev, DescriptionPage: true };
+          });
           props.setAccordionKey("DescriptionPage");
         }}
         type="primary"
@@ -37,6 +40,9 @@ const CategoryPage = props => {
         onClick={() => {
           props.setPickupDetails(prev => {
             return { ...prev, item_type: "misc" };
+          });
+          props.setShowStage(prev => {
+            return { ...prev, DescriptionPage: true };
           });
           props.setAccordionKey("DescriptionPage");
         }}
