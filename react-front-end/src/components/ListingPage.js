@@ -35,6 +35,11 @@ const ListingPage = props => {
     }
   }, [itemId]);
 
+  const backToList = function () {
+    setShow('list');
+    setItemId(undefined);
+  }
+
   return (
     <Fragment>
       <TopBar logout/>
@@ -74,7 +79,10 @@ const ListingPage = props => {
       }
       {
         show === 'preview' && Object.keys(currentItem).length !== 0 &&
-        <Review showDatePicker={true} itemForReview={currentItem}/>
+        <Fragment>
+          <Review showDatePicker={true} itemForReview={currentItem}/>
+          <Button onClick={() => backToList()}>Back to List</Button>
+        </Fragment>
       }
     </Fragment>
   );
