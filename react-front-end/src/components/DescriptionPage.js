@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Upload, Button, Icon, Input, InputNumber } from "antd";
+import { Button, Input, InputNumber } from "antd";
 
 import "antd/dist/antd.css";
 
@@ -35,7 +35,8 @@ const DescriptionPage = props => {
       <h1>Donation Details</h1>
       <div>
         <p style={{ marginBottom: 0, marginTop: 14 }}>
-          Posting title (max 50 characters)"
+          Posting title (max 50 characters){" "}
+          <span style={{ color: "red" }}>*</span>
         </p>
         <Input
           onChange={onTitleChange}

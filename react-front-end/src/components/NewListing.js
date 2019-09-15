@@ -30,6 +30,7 @@ const NewListing = pros => {
     pickup_location: "",
     item_type: "",
     address: "",
+    address2: "",
     city: "",
     province: "",
     zipcode: "",
