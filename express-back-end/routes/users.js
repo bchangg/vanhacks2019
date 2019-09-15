@@ -6,3 +6,5 @@ const knex = require('knex')( knexfile.test );
 router.post( '/users', ( req, res ) => {
     res.json({message:'Success',code:200});
 });
+
+module.exports = router;

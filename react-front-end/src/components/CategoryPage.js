@@ -1,30 +1,44 @@
 import React from "react";
 //import { navigate } from "hookrouter";
 import { Button } from "antd";
+import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
 
-const CategoryPage = pros => {
-  const item = {
-    title: "",
-    quantity: 0,
-    notes: "",
-    pickup_deadline: "",
-    phone: "",
-    pickup_location: "",
-    item_type: ""
-  };
-  const handleClick = value => {
-    item.item_type = value;
-    //navigate("/");
-  };
+const CategoryPage = props => {
   return (
     <>
-      <Button onClick={handleClick("food")} type="primary">
+      <h1>What type of Donation?</h1>
+
+      <Button
+        onClick={() => {
+          props.setPickupDetails(prev => {
+            return { ...prev, item_type: "food" };
+          });
+          props.setAccordionKey("DescriptionPage");
+        }}
+        type="primary"
+      >
         Food
       </Button>
-      <Button onClick={handleClick("clothing")} type="primary">
+      <Button
+        onClick={() => {
+          props.setPickupDetails(prev => {
+            return { ...prev, item_type: "clothing" };
+          });
+          props.setAccordionKey("DescriptionPage");
+        }}
+        type="primary"
+      >
         Clothing
       </Button>
-      <Button onClick={handleClick("misc")} type="primary">
+      <Button
+        onClick={() => {
+          props.setPickupDetails(prev => {
+            return { ...prev, item_type: "misc" };
+          });
+          props.setAccordionKey("DescriptionPage");
+        }}
+        type="primary"
+      >
         Misc
       </Button>
     </>
