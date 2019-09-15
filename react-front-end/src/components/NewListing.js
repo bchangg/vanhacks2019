@@ -9,6 +9,7 @@ import { DescriptionPage } from "./DescriptionPage";
 import { SelectPickup } from "./SelectPickup";
 import { PickupScheduling } from "./PickupScheduling";
 import { Review } from "./Review";
+const axios = require("axios");
 
 const { Panel } = Collapse;
 
@@ -36,12 +37,18 @@ const NewListing = pros => {
             setAccordionKey={setAccordionKey}
           ></CategoryPage>
         </Panel>
-        <Panel header="Description" key="DescriptionPage">
+
+        <Panel
+          className={show ? "hide" : null}
+          header="Description"
+          key="DescriptionPage"
+        >
           <DescriptionPage
             setPickupDetails={setPickupDetails}
             setAccordionKey={setAccordionKey}
           ></DescriptionPage>
         </Panel>
+
         <Panel header="Select Pickup" key="SelectPickup">
           <SelectPickup
             setPickupDetails={setPickupDetails}
@@ -56,7 +63,7 @@ const NewListing = pros => {
         </Panel>
         <Panel header="Pickup Review" key="Review">
           <Review
-            setPickupDetails={setPickupDetails}
+            itemForReview={pickupDetails}
             setAccordionKey={setAccordionKey}
           ></Review>
         </Panel>

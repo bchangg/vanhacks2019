@@ -5,14 +5,18 @@ const PickupScheduling = props => {
   const { TextArea } = Input;
 
   const [textArea, setTextArea] = useState("");
+  const [date, setDate] = useState("");
+  const [phone, setPhone] = useState("");
 
   function onTextChange(event) {
-    console.log(event.target.value);
     setTextArea(event.target.value);
+  }
+  function onPhoneChange(event) {
+    setPhone(event.target.value);
   }
 
   function onDateChange(date, dateString) {
-    console.log(date, dateString);
+    setDate(dateString);
   }
   return (
     <>
@@ -43,7 +47,11 @@ const PickupScheduling = props => {
 
       <h2>What is your contact number?</h2>
 
-      <Input placeholder={"Input Phone Number"} />
+      <Input
+        value={phone}
+        onChange={onPhoneChange}
+        placeholder={"Input Phone Number"}
+      />
       <p>
         Your number will not be shared with anyone, and will only be used to
         send you pickup confirmation SMS.
@@ -51,6 +59,14 @@ const PickupScheduling = props => {
 
       <Button
         onClick={() => {
+          props.setPickupDetails(prev => {
+            return {
+              ...prev,
+              pickup_deadline: date,
+              phone: phone,
+              pickup_location: textArea
+            };
+          });
           props.setAccordionKey("Review");
         }}
         type="primary"

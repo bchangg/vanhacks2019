@@ -11,7 +11,8 @@ const LandingPage = props => {
 
   return (
     <>
-      <h1>Post a donation today</h1>
+      <h1>Welcome to Still Good!</h1>
+      <h2>Post a donation</h2>
       <p>
         Do you have any unwanted food, clothing or other things that you want to
         give away?

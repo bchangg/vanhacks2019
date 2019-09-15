@@ -4,18 +4,9 @@ import { Button } from "antd";
 import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
 
 const CategoryPage = props => {
-  const item = {
-    title: "",
-    quantity: 0,
-    notes: "",
-    pickup_deadline: "",
-    phone: "",
-    pickup_location: "",
-    item_type: ""
-  };
   return (
     <>
-      <h1>What type of Design</h1>
+      <h1>What type of Donation?</h1>
 
       <Button
         onClick={() => {

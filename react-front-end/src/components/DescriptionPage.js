@@ -8,6 +8,7 @@ const { TextArea } = Input;
 const DescriptionPage = props => {
   const [textArea, setTextArea] = useState("");
   const [title, setTitle] = useState("");
+  const [quantity, setQuantity] = useState("");
 
   function onTitleChange(event) {
     setTitle(event.target.value);
@@ -16,6 +17,11 @@ const DescriptionPage = props => {
   function onTextChange(event) {
     setTextArea(event.target.value);
   }
+
+  function onQuantityChange(event) {
+    setQuantity(event);
+  }
+
   function onUpload(info) {
     if (info.file.status !== "uploading") {
       console.log("uploading");
@@ -44,7 +50,13 @@ const DescriptionPage = props => {
         </Button>
       </Upload>
 
-      <InputNumber placeholder={"Quantity"} min={1} max={10} />
+      <InputNumber
+        onChange={onQuantityChange}
+        placeholder={"Quantity"}
+        value={quantity}
+        min={1}
+        max={10}
+      />
 
       <TextArea
         value={textArea}
@@ -56,6 +68,14 @@ const DescriptionPage = props => {
 
       <Button
         onClick={() => {
+          props.setPickupDetails(prev => {
+            return {
+              ...prev,
+              quantity: quantity,
+              notes: textArea,
+              title: title
+            };
+          });
           props.setAccordionKey("SelectPickup");
         }}
         type="primary"
