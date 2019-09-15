@@ -5,7 +5,7 @@ import TopBar from "./components/TopBar";
 const App = () => {
   return (
     <>
-      <TopBar signIn />
+      <TopBar login/>
       <p>LANDING PAGE</p>
       <LandingPage></LandingPage>
     </>
