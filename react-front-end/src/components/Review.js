@@ -71,7 +71,16 @@ const Review = props => {
             <Button
               disabled={disabled}
               onClick={() => {
-                alert("Create Post for Organization");
+                axios
+                  .post(`/api/v1/org/1/pickup/${props.itemForReview.id}`, {
+                    pickup_time: date
+                  })
+                  .then(response => {
+                    navigate("/claim");
+                  })
+                  .catch(error => {
+                    console.log(error);
+                  });
               }}
               type="primary"
             >
