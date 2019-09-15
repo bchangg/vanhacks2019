@@ -1,33 +1,210 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
+
+* { 
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito', sans-serif !important;
+}
+html {
+  font-size: 62.5%  !important; /* Now 10px = 1rem! */
+  --primary-color: #E8BC06;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700 !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  font-size: 16px; /* px fallback */
+  font-size: 1.6rem; /* default font-size for document */
+  line-height: 1.5; /* a nice line-height */
+}
+
+/* for everything else, rem = px/10 */
+footer {
+  font-size: 13px;
+  font-size: 1.3rem;
+}
+
+/* you can safely nest rems, it's still 1rem = 10px */
+footer small {
+  font-size: 10px;
+  font-size: 1rem;
+}
+
+.sg-full-width {
+  padding: 1.5rem 2.5rem;
+}
+
+button.ant-btn, 
+button.ant-btn:active,
+button.ant-btn:focus {
+  margin-bottom: 0.5rem;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  background-color: white;
+  font-weight: 700;
+}
+
+button.ant-btn-primary,
+button.ant-btn-primary:active,
+button.ant-btn-primary:focus {
+  border: none;
+  background-color: var(--primary-color);
+  color: white; 
+}
+
+/* Top Bar */
+.sg-top-bar {
+  margin: 0 0 1.5rem;
+  padding: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  align-items:center;
+  line-height: 6rem;
+}
+
+.sg-top-bar button {
+  text-transform: none;
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+/* Landing page */
+.sg-landing-page {
+}
+
+.sg-landing-page img.placeholder {
+  margin: 3rem auto;
+  display: block;
+}
+
+.sg-landing-page h1,
+.sg-landing-page h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.sg-landing-page h1 span {
+  color: var(--primary-color);
+}
+
+.sg-landing-page p {
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin: 1rem 0 2rem;
+}
+
+.sg-landing-page button,
+.sg-new-listing button {
+  display: block;
+  width: 18rem;
+  height: 5rem;
+  font-size: 1.4rem;
+}
+
+.sg-new-listing h2 {
+  font-size: 2.2rem;
+}
+
+.sg-new-listing .sg-category-page h1 {
+  margin: 5rem 0 2.5rem;
+}
+
+.sg-new-listing .sg-category-page button {
+  display: block;
+  width: 100%;
+  height: 8rem;
+  margin-bottom: 0.5rem;
+}
+
+.sg-new-listing label {
+  display: block;
+  margin:1.5rem 0.5rem 0;
+  font-size:1.2rem;
+}
+
+.sg-new-listing .sg-description-page input, 
+.sg-new-listing .sg-description-page .ant-input-number {
+  height: 5rem;
+  line-height: 5rem;
+}
+
+.sg-new-listing .sg-description-page .ant-input-number {
+  width: 15rem;
+}
+
+.sg-new-listing .sg-description-page button,
+.sg-new-listing .sg-pickup-location button {
+  margin-top: 1rem;
+}
+
+.sg-new-listing .ant-collapse {
+  margin-left: -2.5rem;
+  margin-right: -2.5rem;
+}
+
+.sg-new-listing .sg-pickup-confirmation p {
+  margin: 2rem -1.6rem;
+  background: #F8F2DC;
+  color: var(--primary-color);
+  padding: 1rem 1.6rem;
+}
+
+.sg-review {
+
+}
+
+.sg-review .sg-review-image {
+  display: block;
+  height: 15rem;
+}
+
+.sg-review .sg-review-title-box {
+  background-color: var(--primary-color);
   color: white;
+  padding: 3rem 2.5rem;
+  font-size: 14px;
 }
 
-.App-link {
-  color: #61dafb;
+.sg-review .sg-review-title-box h3 {
+  color: white;
+  font-size: 1.6rem;
+}
+.sg-review {
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sg-review .sg-review-cool-box {
+  font-weight: 700;
+  text-transform: capitalize;
+  display: flex;
+  border-radius: 5px;
+  background-color: white;
+  align-items: center;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+  margin: -3rem 1.5rem 2rem;
+}
+
+.sg-pickup-review .ant-collapse-content-box {}
+
+.sg-review .sg-review-cool-box .ant-divider-vertical {
+  height: 3rem;
+}
+
+.sg-review .sg-review-cool-box p {
+  margin: 1.5rem;
+}
+
+.sg-review .sg-review-label {
+  display: block;
+  color: #C4C4C4;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.sg-pickup-review .ant-collapse-content-box {
+  padding: 0;
 }

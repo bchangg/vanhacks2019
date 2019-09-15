@@ -10,7 +10,7 @@ export default function TopBar(props) {
     navigate('/login');
   }
   return (
-    <div className="d-flex flex-row justify-content-between align-items-center" style={{height: '3rem', padding: '0 1.5rem'}}>
+    <div className="sg-top-bar d-flex flex-row justify-content-between align-items-center">
       <a href="/"><img src="https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo1.png" alt="logo" style={{maxWidth: '6rem'}}/></a>
       {
         props.login &&

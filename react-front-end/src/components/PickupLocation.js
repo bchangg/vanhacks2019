@@ -13,6 +13,7 @@ const PickupLocation = props => {
   const [textArea, setTextArea] = useState("");
 
   function checkAll() {
+    return true;
     if (addressOne && city && province && textArea) {
       return true;
     } else {
@@ -21,14 +22,14 @@ const PickupLocation = props => {
   }
   return (
     <>
-      <h1>Leave for pick-up</h1>
+      <h2>Leave for pick-up</h2>
 
-      <h4>Pick Address</h4>
+      <h3>Pick Address</h3>
 
       <div>
-        <p style={{ marginBottom: 0, marginTop: 14 }}>
+        <label>
           Address Line 1 <span style={{ color: "red" }}>*</span>
-        </p>
+        </label>
         <Input
           onChange={event => {
             setAddressOne(event.target.value);
@@ -38,7 +39,7 @@ const PickupLocation = props => {
         />
       </div>
       <div>
-        <p style={{ marginBottom: 0, marginTop: 14 }}>Address Line 2</p>
+        <label>Address Line 2</label>
         <Input
           onChange={event => {
             setAddressTwo(event.target.value);
@@ -49,9 +50,9 @@ const PickupLocation = props => {
       </div>
 
       <div>
-        <p style={{ marginBottom: 0, marginTop: 14 }}>
+        <label>
           City <span style={{ color: "red" }}>*</span>
-        </p>
+        </label>
         <Input
           onChange={event => {
             setCity(event.target.value);
@@ -62,9 +63,9 @@ const PickupLocation = props => {
       </div>
 
       <div>
-        <p style={{ marginBottom: 0, marginTop: 14 }}>
+        <label>
           Province <span style={{ color: "red" }}>*</span>
-        </p>
+        </label>
         <Input
           onChange={event => {
             setProvince(event.target.value);
@@ -75,7 +76,7 @@ const PickupLocation = props => {
       </div>
 
       <div>
-        <p style={{ marginBottom: 0, marginTop: 14 }}>Postal Code</p>
+        <label>Postal Code</label>
         <Input
           onChange={event => {
             setZipcode(event.target.value);
@@ -86,7 +87,7 @@ const PickupLocation = props => {
       </div>
 
       <div>
-        <p style={{ marginBottom: 0, marginTop: 14 }}>Country</p>
+        <label>Country</label>
         <Input
           onChange={event => {
             setCountry(event.target.value);

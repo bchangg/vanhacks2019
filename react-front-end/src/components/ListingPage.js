@@ -41,7 +41,7 @@ const ListingPage = props => {
   }
 
   return (
-    <Fragment>
+    <div className="sg-full-width">
       <TopBar logout/>
       {
         show === 'list' &&
@@ -84,7 +84,7 @@ const ListingPage = props => {
           <Button onClick={() => backToList()}>Back to List</Button>
         </Fragment>
       }
-    </Fragment>
+    </div>
   );
 };
 

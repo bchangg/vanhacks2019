@@ -9,8 +9,9 @@ const LandingPage = props => {
   };
 
   return (
-    <>
-      <h1>Welcome to Still Good!</h1>
+    <div className="sg-landing-page">
+      <img className="placeholder" src="/assets/images/landing-page.png" />
+      <h1>Welcome to Still <span>Good</span>!</h1>
       <h2>Post a donation</h2>
       <p>Post a food or clothing donation, and have it picked up from you.</p>
       <Button onClick={handleClick} type="primary">
@@ -24,7 +25,7 @@ const LandingPage = props => {
       >
         How it works
       </Button>
-    </>
+    </div>
   );
 };
 

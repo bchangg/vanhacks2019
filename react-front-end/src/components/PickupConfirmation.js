@@ -14,6 +14,7 @@ const PickupConfirmation = props => {
   }
 
   function checkAll() {
+    return true;
     if (date && phone) {
       return true;
     } else {
@@ -22,15 +23,14 @@ const PickupConfirmation = props => {
   }
   return (
     <>
-      <h1>Pickup confirmation</h1>
+      <h2>Pickup confirmation</h2>
 
-      <h4>Pickup deadline</h4>
+      <h3>Pickup deadline</h3>
       <DatePicker onChange={onDateChange} />
-      <br />
 
-      <h2>Confirmation contact</h2>
+      <h3>Confirmation contact</h3>
       <div>
-        <p style={{ marginBottom: 0, marginTop: 14 }}> Phone Number</p>
+        <label>Phone Number</label>
         <Input value={phone} onChange={onPhoneChange} />
         <p>
           Your number will not be shared with anyone, and will only be used to
