@@ -221,3 +221,14 @@ button.ant-btn-primary:focus {
   margin: 1rem -2.5rem;
   width: calc( 100% + 5rem );
 }
+
+.sg-listing-page {
+  background-color: #EBEBEB
+}
+
+.sg-listing-page .sg-listing-item {
+  margin: 1rem 0;
+  box-shadow: none;
+  border: 0;
+  padding: 0.8rem;
+}
