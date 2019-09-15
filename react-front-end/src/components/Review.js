@@ -1,9 +1,20 @@
-import React from "react";
-import { Button } from "antd";
+import React, { useState } from "react";
+import { Button, Modal, DatePicker } from "antd";
 import "antd/dist/antd.css";
 import { navigate } from "hookrouter";
 import axios from "axios";
+
 const Review = props => {
+  const [interest, setInterest] = useState(false);
+  const [visible, setVisible] = useState(false);
+  const [date, setDate] = useState("");
+
+  function onDateChange(date, dateString) {
+    setDate(dateString);
+    disabled = true;
+  }
+  let disabled = false;
+
   return (
     <>
       <span>
@@ -18,23 +29,69 @@ const Review = props => {
 
       <h4>Leave for pickup</h4>
       <p>{props.itemForReview.pickup_location}</p>
-
-      <Button
-        onClick={() => {
-          console.log(props.itemForReview);
-          axios
-            .post("/api/v1/posts", props.itemForReview)
-            .then(response => {
-              navigate("/donationPost");
-            })
-            .catch(error => {
-              console.log(error);
-            });
-        }}
-        type="primary"
-      >
-        Post your donation
-      </Button>
+      {!props.showDatePicker ? (
+        <Button
+          onClick={() => {
+            axios
+              .post("/api/v1/posts", props.itemForReview)
+              .then(response => {
+                navigate("/donationPost");
+              })
+              .catch(error => {
+                console.log(error);
+              });
+          }}
+          type="primary"
+        >
+          Post your donation
+        </Button>
+      ) : (
+        <Button
+          onClick={() => {
+            setInterest(true);
+            setVisible(true);
+          }}
+          type="primary"
+        >
+          We're interested!
+        </Button>
+      )}
+      {interest && (
+        <Modal
+          visible={visible}
+          title="Select a pickup day"
+          footer={[
+            <Button
+              key="back"
+              onClick={() => {
+                setVisible(false);
+              }}
+            >
+              Return
+            </Button>,
+            <Button
+              disabled={disabled}
+              onClick={() => {
+                axios
+                  .post(`/api/v1/org/1/pickup/${props.itemForReview.id}`, {
+                    pickup_time: date
+                  })
+                  .then(response => {
+                    navigate("/claim");
+                  })
+                  .catch(error => {
+                    console.log(error);
+                  });
+              }}
+              type="primary"
+            >
+              Claim this donation
+            </Button>
+          ]}
+        >
+          <DatePicker onChange={onDateChange} />
+        </Modal>
+      )}
     </>
   );
 };

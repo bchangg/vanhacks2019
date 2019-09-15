@@ -119,11 +119,7 @@ const NewListing = pros => {
             key="Review" 
             className="sg-pickup-review"
           >
-            <Review
-              setShowStage={setShowStage}
-              itemForReview={pickupDetails}
-              setAccordionKey={setAccordionKey}
-            ></Review>
+            <Review showDatePicker={false} itemForReview={pickupDetails}></Review>
           </Panel>
         </Collapse>
       </div>
