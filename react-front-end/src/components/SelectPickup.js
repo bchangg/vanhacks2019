@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Icon, Input, Button, Divider } from "antd";
+import { Button, Divider } from "antd";
 import "antd/dist/antd.css";
 const SelectPickup = props => {
   return (
@@ -14,11 +14,11 @@ const SelectPickup = props => {
       </p>
       <Button
         onClick={() => {
-          props.setAccordionKey("PickupScheduling");
+          props.setAccordionKey("PickupLocation");
           props.setShowStage(prev => {
             return {
               ...prev,
-              PickupScheduling: true
+              PickupLocation: true
             };
           });
         }}

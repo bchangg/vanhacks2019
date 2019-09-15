@@ -1,15 +1,13 @@
-import React, { useState, useEffect } from "react";
-//import { navigate } from "hookrouter";
-import { Form, Icon, Input, Button } from "antd";
+import React, { useState } from "react";
 import "antd/dist/antd.css";
 import "./antd2.css";
 import { Collapse } from "antd";
 import { CategoryPage } from "./CategoryPage";
 import { DescriptionPage } from "./DescriptionPage";
 import { SelectPickup } from "./SelectPickup";
-import { PickupScheduling } from "./PickupScheduling";
+import { PickupConfirmation } from "./PickupConfirmation";
+import { PickupLocation } from "./PickupLocation";
 import { Review } from "./Review";
-const axios = require("axios");
 
 const { Panel } = Collapse;
 
@@ -19,7 +17,8 @@ const NewListing = pros => {
     CategoryPage: true,
     DescriptionPage: false,
     SelectPickup: false,
-    PickupScheduling: false,
+    PickupLocation: false,
+    PickupConfirmation: false,
     Review: false
   });
   const [pickupDetails, setPickupDetails] = useState({
@@ -29,7 +28,12 @@ const NewListing = pros => {
     pickup_deadline: "",
     phone: "",
     pickup_location: "",
-    item_type: ""
+    item_type: "",
+    address: "",
+    city: "",
+    province: "",
+    zipcode: "",
+    country: ""
   });
 
   const callBack = key => {
@@ -75,16 +79,29 @@ const NewListing = pros => {
         </Panel>
         <Panel
           style={{
-            display: showStage.PickupScheduling ? "block" : "none"
+            display: showStage.PickupLocation ? "block" : "none"
           }}
-          header="Pickup Scheduling"
-          key="PickupScheduling"
+          header="Pickup Location"
+          key="PickupLocation"
         >
-          <PickupScheduling
+          <PickupLocation
             setShowStage={setShowStage}
             setPickupDetails={setPickupDetails}
             setAccordionKey={setAccordionKey}
-          ></PickupScheduling>
+          ></PickupLocation>
+        </Panel>
+        <Panel
+          style={{
+            display: showStage.PickupConfirmation ? "block" : "none"
+          }}
+          header="Pickup Confirmation"
+          key="PickupConfirmation"
+        >
+          <PickupConfirmation
+            setShowStage={setShowStage}
+            setPickupDetails={setPickupDetails}
+            setAccordionKey={setAccordionKey}
+          ></PickupConfirmation>
         </Panel>
         <Panel
           style={{

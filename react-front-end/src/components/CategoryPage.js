@@ -6,7 +6,7 @@ import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
 const CategoryPage = props => {
   return (
     <>
-      <h1>What type of Donation?</h1>
+      <h1>What type of donation?</h1>
 
       <Button
         onClick={() => {

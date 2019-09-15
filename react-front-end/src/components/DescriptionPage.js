@@ -33,28 +33,39 @@ const DescriptionPage = props => {
   return (
     <>
       <h1>Donation Details</h1>
-
-      <Input
-        onChange={onTitleChange}
-        value={title}
-        placeholder={"post title"}
-      />
-
-      <InputNumber
-        onChange={onQuantityChange}
-        placeholder={"Quantity"}
-        value={quantity}
-        min={1}
-        max={10}
-      />
-
-      <TextArea
-        value={textArea}
-        onChange={onTextChange}
-        placeholder="Please leave detailed instructions as to 
-        where you will be leaving the item for pick-up"
-        autosize={{ minRows: 3, maxRows: 5 }}
-      />
+      <div>
+        <p style={{ marginBottom: 0, marginTop: 14 }}>
+          Posting title (max 50 characters)"
+        </p>
+        <Input
+          onChange={onTitleChange}
+          value={title}
+          placeholder={"post title"}
+        />
+      </div>
+      <div>
+        <p style={{ marginBottom: 0, marginTop: 14 }}>
+          Quantity <span style={{ color: "red" }}>*</span>
+        </p>
+        <InputNumber
+          onChange={onQuantityChange}
+          placeholder={"Quantity"}
+          value={quantity}
+          min={1}
+          max={10}
+        />
+      </div>
+      <div>
+        <p style={{ marginBottom: 0, marginTop: 14 }}>
+          Additional details <span style={{ color: "red" }}>*</span>
+        </p>
+        <TextArea
+          value={textArea}
+          onChange={onTextChange}
+          label={"Additional details *"}
+          autosize={{ minRows: 3, maxRows: 5 }}
+        />
+      </div>
 
       <Button
         onClick={() => {

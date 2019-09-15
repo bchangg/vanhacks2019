@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Form, Icon, Input, Button, DatePicker, Upload } from "antd";
 import "antd/dist/antd.css";
-const PickupScheduling = props => {
+const PickupLocation = props => {
   const { TextArea } = Input;
 
   const [textArea, setTextArea] = useState("");
@@ -73,10 +73,10 @@ const PickupScheduling = props => {
             props.setShowStage(prev => {
               return {
                 ...prev,
-                Review: true
+                PickupConfirmation: true
               };
             });
-            props.setAccordionKey("Review");
+            props.setAccordionKey("PickupConfirmation");
           } else {
             alert("fill all fields");
           }
@@ -89,4 +89,4 @@ const PickupScheduling = props => {
   );
 };
 
-export { PickupScheduling };
+export { PickupLocation };
