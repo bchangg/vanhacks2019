@@ -111,11 +111,7 @@ const NewListing = pros => {
           header="Pickup Review"
           key="Review"
         >
-          <Review
-            setShowStage={setShowStage}
-            itemForReview={pickupDetails}
-            setAccordionKey={setAccordionKey}
-          ></Review>
+          <Review showDatePicker={false} itemForReview={pickupDetails}></Review>
         </Panel>
       </Collapse>
     </>
