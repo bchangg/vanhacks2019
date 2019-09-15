@@ -12,12 +12,17 @@ const LandingPage = props => {
     <>
       <h1>Welcome to Still Good!</h1>
       <h2>Post a donation</h2>
-      <p>
-        Do you have any unwanted food, clothing or other things that you want to
-        give away?
-      </p>
+      <p>Post a food or clothing donation, and have it picked up from you.</p>
       <Button onClick={handleClick} type="primary">
         Post a donation
+      </Button>
+      <Button
+        onClick={() => {
+          alert("It works!");
+        }}
+        type="default"
+      >
+        How it works
       </Button>
     </>
   );

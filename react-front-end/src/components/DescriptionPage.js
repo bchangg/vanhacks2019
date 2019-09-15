@@ -22,49 +22,50 @@ const DescriptionPage = props => {
     setQuantity(event);
   }
 
-  function onUpload(info) {
-    if (info.file.status !== "uploading") {
-      console.log("uploading");
-      console.log(info.file, info.fileList);
-    }
-    if (info.file.status === "done") {
-      console.log("done");
-    } else if (info.file.status === "error") {
-      console.log("error");
+  function checkAll() {
+    if (textArea && title && quantity) {
+      return true;
+    } else {
+      return false;
     }
   }
 
   return (
     <>
       <h1>Donation Details</h1>
-
-      <Input
-        onChange={onTitleChange}
-        value={title}
-        placeholder={"post title"}
-      />
-
-      <Upload onChange={onUpload}>
-        <Button>
-          <Icon type="upload" /> Add Images+
-        </Button>
-      </Upload>
-
-      <InputNumber
-        onChange={onQuantityChange}
-        placeholder={"Quantity"}
-        value={quantity}
-        min={1}
-        max={10}
-      />
-
-      <TextArea
-        value={textArea}
-        onChange={onTextChange}
-        placeholder="Please leave detailed instructions as to 
-        where you will be leaving the item for pick-up"
-        autosize={{ minRows: 3, maxRows: 5 }}
-      />
+      <div>
+        <p style={{ marginBottom: 0, marginTop: 14 }}>
+          Posting title (max 50 characters)"
+        </p>
+        <Input
+          onChange={onTitleChange}
+          value={title}
+          placeholder={"post title"}
+        />
+      </div>
+      <div>
+        <p style={{ marginBottom: 0, marginTop: 14 }}>
+          Quantity <span style={{ color: "red" }}>*</span>
+        </p>
+        <InputNumber
+          onChange={onQuantityChange}
+          placeholder={"Quantity"}
+          value={quantity}
+          min={1}
+          max={10}
+        />
+      </div>
+      <div>
+        <p style={{ marginBottom: 0, marginTop: 14 }}>
+          Additional details <span style={{ color: "red" }}>*</span>
+        </p>
+        <TextArea
+          value={textArea}
+          onChange={onTextChange}
+          label={"Additional details *"}
+          autosize={{ minRows: 3, maxRows: 5 }}
+        />
+      </div>
 
       <Button
         onClick={() => {
@@ -76,7 +77,17 @@ const DescriptionPage = props => {
               title: title
             };
           });
-          props.setAccordionKey("SelectPickup");
+          if (checkAll()) {
+            props.setShowStage(prev => {
+              return {
+                ...prev,
+                SelectPickup: true
+              };
+            });
+            props.setAccordionKey("SelectPickup");
+          } else {
+            alert("fill all fields");
+          }
         }}
         type="primary"
         htmlType="submit"

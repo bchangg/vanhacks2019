@@ -6,12 +6,15 @@ import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
 const CategoryPage = props => {
   return (
     <>
-      <h1>What type of Donation?</h1>
+      <h1>What type of donation?</h1>
 
       <Button
         onClick={() => {
           props.setPickupDetails(prev => {
             return { ...prev, item_type: "food" };
+          });
+          props.setShowStage(prev => {
+            return { ...prev, DescriptionPage: true };
           });
           props.setAccordionKey("DescriptionPage");
         }}

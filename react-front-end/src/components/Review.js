@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Icon, Input, Button } from "antd";
+import { Button } from "antd";
 import "antd/dist/antd.css";
 import { axios } from "axios";
 
@@ -21,10 +21,11 @@ const Review = props => {
 
       <Button
         onClick={() => {
+          console.log(props.itemForReview);
           axios
             .post("/api/v1/posts", props.itemForReview)
             .then(response => {
-              console.log(response.body);
+              console.log(response.data);
             })
             .catch(error => {
               console.log(error);
