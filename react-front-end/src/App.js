@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
 import { LandingPage } from "./components/LandingPage";
+import TopBar from "./components/TopBar";
 const App = () => {
   return (
     <>
+      <TopBar signIn/>
       <p>LANDING PAGE</p>
       <LandingPage></LandingPage>
     </>
