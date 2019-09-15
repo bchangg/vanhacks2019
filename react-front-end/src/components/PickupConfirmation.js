@@ -20,6 +20,7 @@ const PickupConfirmation = props => {
   }
 
   function checkAll() {
+    return true;
     if (textArea && date && phone) {
       return true;
     } else {

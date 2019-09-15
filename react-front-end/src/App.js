@@ -4,17 +4,10 @@ import { LandingPage } from "./components/LandingPage";
 import TopBar from "./components/TopBar";
 const App = () => {
   return (
-    <>
+    <div className="sg-full-width">
       <TopBar signIn />
-      <p>LANDING PAGE</p>
       <LandingPage></LandingPage>
-    </>
-    // <div className="App">
-    //   <h1>{ this.state.message }</h1>
-    //   <button onClick={this.fetchData} >
-    //     Fetch Data
-    //   </button>
-    // </div>
+    </div >
   );
 };
 

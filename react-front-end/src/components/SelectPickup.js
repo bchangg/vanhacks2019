@@ -4,14 +4,11 @@ import "antd/dist/antd.css";
 const SelectPickup = props => {
   return (
     <>
-      <h1>Pick-up Method</h1>
+      <h2>Select pickup type</h2>
       <Divider />
 
-      <h2>Leave for Pick-up</h2>
-      <p>
-        Leave the items in a box in a secure area, and have a representative
-        come to pick-up at any time.
-      </p>
+      <h3>Pick-up in person</h3>
+      <p>Organization representatives will contant you directly and setup a time and place for pick-up</p>
       <Button
         onClick={() => {
           props.setAccordionKey("PickupLocation");
@@ -27,11 +24,8 @@ const SelectPickup = props => {
         Select
       </Button>
       <Divider dashed />
-      <h2>Pick-up in person</h2>
-      <p>
-        Organization representatives will contact you directly and setup a time
-        and place for pick-up
-      </p>
+      <h3>Leave for pickup</h3>
+      <p>Leave the items a secure area, and have a representative come to pick-up at any time.</p>
       <Button
         disabled={true}
         onClick={() => {

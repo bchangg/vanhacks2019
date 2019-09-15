@@ -23,6 +23,7 @@ const DescriptionPage = props => {
   }
 
   function checkAll() {
+    return true;
     if (textArea && title && quantity) {
       return true;
     } else {
@@ -32,11 +33,9 @@ const DescriptionPage = props => {
 
   return (
     <>
-      <h1>Donation Details</h1>
+      <h2>Donation Details</h2>
       <div>
-        <p style={{ marginBottom: 0, marginTop: 14 }}>
-          Posting title (max 50 characters)"
-        </p>
+        <label>Posting title (max 50 characters)</label>
         <Input
           onChange={onTitleChange}
           value={title}
@@ -44,9 +43,7 @@ const DescriptionPage = props => {
         />
       </div>
       <div>
-        <p style={{ marginBottom: 0, marginTop: 14 }}>
-          Quantity <span style={{ color: "red" }}>*</span>
-        </p>
+        <label>Quantity <span style={{ color: "red" }}>*</span></label>
         <InputNumber
           onChange={onQuantityChange}
           placeholder={"Quantity"}
@@ -56,9 +53,7 @@ const DescriptionPage = props => {
         />
       </div>
       <div>
-        <p style={{ marginBottom: 0, marginTop: 14 }}>
-          Additional details <span style={{ color: "red" }}>*</span>
-        </p>
+        <label>Additional details <span style={{ color: "red" }}>*</span></label>
         <TextArea
           value={textArea}
           onChange={onTextChange}

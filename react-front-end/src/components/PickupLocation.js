@@ -20,6 +20,7 @@ const PickupLocation = props => {
   }
 
   function checkAll() {
+    return true;
     if (textArea && date && phone) {
       return true;
     } else {
@@ -28,17 +29,17 @@ const PickupLocation = props => {
   }
   return (
     <>
-      <h1>Leave for pick-up</h1>
+      <h2>Leave for pick-up</h2>
       <p>
         Please select a day and time that you can leave the items out for, and a
         description of where you will be leaving it
       </p>
 
-      <h2>What is your delivery deadline?</h2>
+      <h3>What is your delivery deadline?</h3>
       <DatePicker onChange={onDateChange} />
       <br />
 
-      <h2>Pick-up location</h2>
+      <h3>Pick-up location</h3>
       <TextArea
         value={textArea}
         onChange={onTextChange}
@@ -47,7 +48,7 @@ const PickupLocation = props => {
         autosize={{ minRows: 3, maxRows: 5 }}
       />
 
-      <h2>What is your contact number?</h2>
+      <h3>What is your contact number?</h3>
 
       <Input
         value={phone}

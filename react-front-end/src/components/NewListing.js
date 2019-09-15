@@ -40,9 +40,9 @@ const NewListing = pros => {
     setAccordionKey(key);
   };
   return (
-    <>
+    <div className="sg-new-listing">
       <Collapse activeKey={accordionKey} onChange={callBack} accordion>
-        <Panel header="Category" key="CategoryPage">
+        <Panel header="Category" key="CategoryPage" className="sg-category-page">
           <CategoryPage
             setShowStage={setShowStage}
             setPickupDetails={setPickupDetails}
@@ -55,7 +55,8 @@ const NewListing = pros => {
             display: showStage.DescriptionPage ? "block" : "none"
           }}
           header="Description"
-          key="DescriptionPage"
+          key="DescriptionPage" 
+          className="sg-description-page"
         >
           <DescriptionPage
             setShowStage={setShowStage}
@@ -69,7 +70,8 @@ const NewListing = pros => {
             display: showStage.SelectPickup ? "block" : "none"
           }}
           header="Select Pickup"
-          key="SelectPickup"
+          key="SelectPickup" 
+          className="sg-select-pickup"
         >
           <SelectPickup
             setShowStage={setShowStage}
@@ -82,7 +84,8 @@ const NewListing = pros => {
             display: showStage.PickupLocation ? "block" : "none"
           }}
           header="Pickup Location"
-          key="PickupLocation"
+          key="PickupLocation" 
+          className="sg-pickup-location"
         >
           <PickupLocation
             setShowStage={setShowStage}
@@ -95,7 +98,8 @@ const NewListing = pros => {
             display: showStage.PickupConfirmation ? "block" : "none"
           }}
           header="Pickup Confirmation"
-          key="PickupConfirmation"
+          key="PickupConfirmation" 
+          className="sg-pickup-confirmation"
         >
           <PickupConfirmation
             setShowStage={setShowStage}
@@ -108,7 +112,8 @@ const NewListing = pros => {
             display: showStage.Review ? "block" : "none"
           }}
           header="Pickup Review"
-          key="Review"
+          key="Review" 
+          className="sg-pickup-review"
         >
           <Review
             setShowStage={setShowStage}
@@ -117,13 +122,7 @@ const NewListing = pros => {
           ></Review>
         </Panel>
       </Collapse>
-    </>
-    // <div className="App">
-    //   <h1>{ this.state.message }</h1>
-    //   <button onClick={this.fetchData} >
-    //     Fetch Data
-    //   </button>
-    // </div>
+    </div>
   );
 };
 
