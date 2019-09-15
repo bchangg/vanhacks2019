@@ -1,10 +1,9 @@
 import React from "react";
 import { Button } from "antd";
 import "antd/dist/antd.css";
-import { axios } from "axios";
-
+import { navigate } from "hookrouter";
+import axios from "axios";
 const Review = props => {
-  const axios = require("axios");
   return (
     <>
       <h1>Display Review</h1>
@@ -25,7 +24,7 @@ const Review = props => {
           axios
             .post("/api/v1/posts", props.itemForReview)
             .then(response => {
-              console.log(response.data);
+              navigate("/donationPost");
             })
             .catch(error => {
               console.log(error);
@@ -33,7 +32,7 @@ const Review = props => {
         }}
         type="primary"
       >
-        Submit Posting
+        Post your donation
       </Button>
     </>
   );
