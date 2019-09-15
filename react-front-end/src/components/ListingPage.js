@@ -45,7 +45,7 @@ const ListingPage = props => {
       <TopBar logout/>
       {
         show === 'list' &&
-        <Fragment>
+        <div className="sg-listing-page">
           <div>
             {
               buttonNames.map((name, index) => {
@@ -75,7 +75,7 @@ const ListingPage = props => {
               })
             }
           </div>
-        </Fragment>
+        </div>
       }
       {
         show === 'preview' && Object.keys(currentItem).length !== 0 &&

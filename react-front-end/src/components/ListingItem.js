@@ -41,7 +41,7 @@ export default function ListingItem(props) {
   }
 
   return (
-    <Paper onClick={() => viewItem(props.id)}>
+    <Paper onClick={() => viewItem(props.id)} className="sg-listing-item">
       <div className="d-flex flex-row align-items-center">
         <div className="d-flex flex-column align-items-start">
           <span>{props.title}</span>
