@@ -15,6 +15,12 @@ const SelectPickup = props => {
       <Button
         onClick={() => {
           props.setAccordionKey("PickupScheduling");
+          props.setShowStage(prev => {
+            return {
+              ...prev,
+              PickupScheduling: true
+            };
+          });
         }}
         type="primary"
       >

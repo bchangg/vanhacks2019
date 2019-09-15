@@ -22,15 +22,11 @@ const DescriptionPage = props => {
     setQuantity(event);
   }
 
-  function onUpload(info) {
-    if (info.file.status !== "uploading") {
-      console.log("uploading");
-      console.log(info.file, info.fileList);
-    }
-    if (info.file.status === "done") {
-      console.log("done");
-    } else if (info.file.status === "error") {
-      console.log("error");
+  function checkAll() {
+    if (textArea && title && quantity) {
+      return true;
+    } else {
+      return false;
     }
   }
 
@@ -43,12 +39,6 @@ const DescriptionPage = props => {
         value={title}
         placeholder={"post title"}
       />
-
-      <Upload onChange={onUpload}>
-        <Button>
-          <Icon type="upload" /> Add Images+
-        </Button>
-      </Upload>
 
       <InputNumber
         onChange={onQuantityChange}
@@ -76,7 +66,17 @@ const DescriptionPage = props => {
               title: title
             };
           });
-          props.setAccordionKey("SelectPickup");
+          if (checkAll()) {
+            props.setShowStage(prev => {
+              return {
+                ...prev,
+                SelectPickup: true
+              };
+            });
+            props.setAccordionKey("SelectPickup");
+          } else {
+            alert("fill all fields");
+          }
         }}
         type="primary"
         htmlType="submit"

@@ -13,6 +13,9 @@ const CategoryPage = props => {
           props.setPickupDetails(prev => {
             return { ...prev, item_type: "food" };
           });
+          props.setShowStage(prev => {
+            return { ...prev, DescriptionPage: true };
+          });
           props.setAccordionKey("DescriptionPage");
         }}
         type="primary"

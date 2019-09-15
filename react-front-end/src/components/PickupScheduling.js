@@ -18,6 +18,14 @@ const PickupScheduling = props => {
   function onDateChange(date, dateString) {
     setDate(dateString);
   }
+
+  function checkAll() {
+    if (textArea && date && phone) {
+      return true;
+    } else {
+      return false;
+    }
+  }
   return (
     <>
       <h1>Leave for pick-up</h1>
@@ -31,12 +39,6 @@ const PickupScheduling = props => {
       <br />
 
       <h2>Pick-up location</h2>
-      <Upload>
-        <Button>
-          <Icon type="upload" /> Add Images+
-        </Button>
-      </Upload>
-
       <TextArea
         value={textArea}
         onChange={onTextChange}
@@ -67,7 +69,17 @@ const PickupScheduling = props => {
               pickup_location: textArea
             };
           });
-          props.setAccordionKey("Review");
+          if (checkAll()) {
+            props.setShowStage(prev => {
+              return {
+                ...prev,
+                Review: true
+              };
+            });
+            props.setAccordionKey("Review");
+          } else {
+            alert("fill all fields");
+          }
         }}
         type="primary"
       >

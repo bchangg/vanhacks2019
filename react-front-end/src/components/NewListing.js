@@ -15,6 +15,13 @@ const { Panel } = Collapse;
 
 const NewListing = pros => {
   const [accordionKey, setAccordionKey] = useState("CategoryPage");
+  const [showStage, setShowStage] = useState({
+    CategoryPage: true,
+    DescriptionPage: false,
+    SelectPickup: false,
+    PickupScheduling: false,
+    Review: false
+  });
   const [pickupDetails, setPickupDetails] = useState({
     title: "",
     quantity: 0,
@@ -33,32 +40,61 @@ const NewListing = pros => {
       <Collapse activeKey={accordionKey} onChange={callBack} accordion>
         <Panel header="Category" key="CategoryPage">
           <CategoryPage
+            setShowStage={setShowStage}
             setPickupDetails={setPickupDetails}
             setAccordionKey={setAccordionKey}
           ></CategoryPage>
         </Panel>
 
-        <Panel header="Description" key="DescriptionPage">
+        <Panel
+          style={{
+            display: showStage.DescriptionPage ? "block" : "none"
+          }}
+          header="Description"
+          key="DescriptionPage"
+        >
           <DescriptionPage
+            setShowStage={setShowStage}
             setPickupDetails={setPickupDetails}
             setAccordionKey={setAccordionKey}
           ></DescriptionPage>
         </Panel>
 
-        <Panel header="Select Pickup" key="SelectPickup">
+        <Panel
+          style={{
+            display: showStage.SelectPickup ? "block" : "none"
+          }}
+          header="Select Pickup"
+          key="SelectPickup"
+        >
           <SelectPickup
+            setShowStage={setShowStage}
             setPickupDetails={setPickupDetails}
             setAccordionKey={setAccordionKey}
           ></SelectPickup>
         </Panel>
-        <Panel header="Pickup Scheduling" key="PickupScheduling">
+        <Panel
+          style={{
+            display: showStage.PickupScheduling ? "block" : "none"
+          }}
+          header="Pickup Scheduling"
+          key="PickupScheduling"
+        >
           <PickupScheduling
+            setShowStage={setShowStage}
             setPickupDetails={setPickupDetails}
             setAccordionKey={setAccordionKey}
           ></PickupScheduling>
         </Panel>
-        <Panel header="Pickup Review" key="Review">
+        <Panel
+          style={{
+            display: showStage.Review ? "block" : "none"
+          }}
+          header="Pickup Review"
+          key="Review"
+        >
           <Review
+            setShowStage={setShowStage}
             itemForReview={pickupDetails}
             setAccordionKey={setAccordionKey}
           ></Review>
