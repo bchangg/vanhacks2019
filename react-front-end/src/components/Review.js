@@ -21,6 +21,7 @@ const Review = props => {
 
       <Button
         onClick={() => {
+          console.log( props.itemForReview );
           axios
             .post("/api/v1/posts", props.itemForReview)
             .then(response => {
