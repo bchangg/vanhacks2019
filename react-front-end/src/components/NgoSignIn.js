@@ -3,7 +3,8 @@ import { TextField, Button } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles';
 import { navigate } from 'hookrouter';
 import axios from 'axios';
-import TopBar from "./TopBar"
+import TopBar from "./TopBar";
+import { useCookies } from 'react-cookie';
 
 const useStyles = makeStyles(theme => ({
   error: {
@@ -33,6 +34,7 @@ export default function NgoSignIn(props) {
     email: '',
     password: ''
   });
+  const [cookies, setCookie] = useCookies(['user']);
 
   const validate = function() {
     if (!email) {
@@ -67,8 +69,10 @@ export default function NgoSignIn(props) {
     if (validate()) {
       axios.post('/users', { email, password })
         .then((response) => {
-          console.log('inside axios post to login');
-          console.log(response);
+          if (response.data.code === 200) {
+            setCookie('user', response.data.message);
+            navigate('/items');
+          }
         })
         .catch(() => {
           navigate('/login');

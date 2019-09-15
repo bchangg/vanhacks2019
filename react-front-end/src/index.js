@@ -4,6 +4,7 @@ import { useRoutes } from 'hookrouter';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 import routes from './router'
+import 'bootstrap/dist/css/bootstrap.css';
 
 function App() {
   return useRoutes(routes);
