@@ -1,8 +1,10 @@
 import React from "react";
 import { Form, Icon, Input, Button } from "antd";
 import "antd/dist/antd.css";
+import { axios } from "axios";
 
 const Review = props => {
+  const axios = require("axios");
   return (
     <>
       <h1>Display Review</h1>
@@ -19,7 +21,14 @@ const Review = props => {
 
       <Button
         onClick={() => {
-          console.log("NAVIGATE");
+          axios
+            .post("/api/v1/posts", props.itemForReview)
+            .then(response => {
+              console.log(response.body);
+            })
+            .catch(error => {
+              console.log(error);
+            });
         }}
         type="primary"
       >

@@ -2,7 +2,6 @@ import React from "react";
 //import { navigate } from "hookrouter";
 import { Button } from "antd";
 import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
-import { OmitProps } from "antd/lib/transfer/renderListBody";
 
 const LandingPage = props => {
   const handleClick = () => {
