@@ -1,5 +1,6 @@
 import React from 'react';
 import { Paper } from '@material-ui/core';
+import { navigate } from 'hookrouter';
 
 const monthParser = function(month) {
   switch (month) {
@@ -35,8 +36,10 @@ const monthParser = function(month) {
 export default function ListingItem(props) {
   const date = new Date(props.pickupDeadline);
   const viewItem = function(itemId) {
-    console.log(itemId)
+    console.log(itemId);
+    props.setItemId(itemId)
   }
+
   return (
     <Paper onClick={() => viewItem(props.id)}>
       <div className="d-flex flex-row align-items-center">
