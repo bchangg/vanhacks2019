@@ -11,7 +11,7 @@ export default function TopBar(props) {
   }
   return (
     <div className="sg-top-bar d-flex flex-row justify-content-between align-items-center">
-      <a href="/"><img src="https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo1.png" alt="logo" style={{maxWidth: '6rem'}}/></a>
+      <a href="/"><img src="/assets/images/logo.png" alt="logo" style={{maxWidth: '9rem'}}/></a>
       {
         props.login &&
         <Button onClick={() => navigate('/login')}>Sign In</Button>

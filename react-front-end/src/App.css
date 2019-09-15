@@ -11,6 +11,7 @@ html {
   max-width: 493px;
   margin: 1rem auto;
   border: 1px solid #DDD;
+  height: calc( 100% - 2rem );
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -41,6 +42,7 @@ footer small {
 
 button.ant-btn, 
 button.ant-btn:active,
+button.ant-btn:hover,
 button.ant-btn:focus {
   margin-bottom: 0.5rem;
   border: 1px solid var(--primary-color);
@@ -51,6 +53,7 @@ button.ant-btn:focus {
 
 button.ant-btn-primary,
 button.ant-btn-primary:active,
+button.ant-btn-primary:hover,
 button.ant-btn-primary:focus {
   border: none;
   background-color: var(--primary-color);
